@@ -1,39 +1,33 @@
 package org.example;
 
+import aluno.Aluno;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 
 public class Main {
 
     public static void main(String[] args) {
-        ArrayList<Integer> numeros = new ArrayList<>();
-        numeros.add(50);//1
-        numeros.add(80);//2
-        numeros.add(41);//3
-        numeros.add(86);//4
-        numeros.add(31);//5
-        numeros.add(52);//6
-        numeros.add(19);//7
-        numeros.add(80);//8
+        ArrayList<Aluno> alunos = new ArrayList<>();
+        alunos.add(
+                new Aluno(1, "Cícero", LocalDate.of(1990, 01, 01))
+        );//1
+        alunos.add(
+                new Aluno(2, "Wallys", LocalDate.of(1991, 12, 31))
+        );//2
+        alunos.add(
+                new Aluno(4, "Ariane", LocalDate.of(1992, 04, 25))
+        );//3
 
         System.out.println("Lista desordenada");
-        System.out.println(numeros);
+        System.out.println(alunos);
 
-        Collections.sort(numeros, new Comparator<Integer>() {
-            @Override
-            public int compare(Integer esquerda, Integer direita) {
-                if (esquerda > direita) {
-                    return -1;
-                } else if (esquerda < direita) {
-                    return 1;
-                } else {
-                    return 0;
-                }
-            }
-        });
+        //Collections.sort(alunos, Comparable<alunos>);
+        Collections.sort(alunos);
+
         System.out.println("Lista ordenada");
-        System.out.println(numeros);
+        System.out.println(alunos);
     }
 
 }
