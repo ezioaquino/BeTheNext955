@@ -19,11 +19,14 @@ public class Main {
         alunos.add(
                 new Aluno(4, "Ariane", LocalDate.of(1992, 04, 25))
         );//3
+        alunos.add(
+                new Aluno(6, "Ariane", LocalDate.of(1993, 07, 31))
+        );//4
+
 
         System.out.println("Lista desordenada");
         System.out.println(alunos);
 
-        //Collections.sort(alunos, Comparable<alunos>);
         Collections.sort(alunos);
 
         System.out.println("Lista ordenada");

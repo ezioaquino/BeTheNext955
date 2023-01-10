@@ -1,6 +1,7 @@
 package aluno;
 
 import java.time.LocalDate;
+import java.util.Locale;
 
 public class Aluno implements Comparable<Aluno>{
 
@@ -30,11 +31,17 @@ public class Aluno implements Comparable<Aluno>{
 
     @Override
     public int compareTo(Aluno other) {
-        return this.nome.compareTo(other.nome);
+        Integer resultado = this.nome.toLowerCase().compareTo(other.nome.toLowerCase());
+        if (resultado == 0){
+            return  this.numeroMatricula.compareTo(other.numeroMatricula);
+        } else {
+            return resultado;
+        }
+
     }
 
     @Override
     public String toString() {
-        return "Nome: " + this.nome;
+        return "{ Matrícula: "+this.numeroMatricula +", Nome: " + this.nome + " }";
     }
 }
